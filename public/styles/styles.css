@@ -1,0 +1,34 @@
+
+
+.photo{
+  border-radius: 50%;
+}
+/* styles.css */
+/*body {
+  overflow: hidden; /* Prevent vertical scrollbar due to falling fireworks 
+}*/
+
+.firework {
+  position: absolute;
+  width: 20px;
+  height: 50px;
+  background-color: #ffcc00; /* You can customize the color */
+  border-radius: 50%;
+  transform-origin: center bottom;
+}
+.congrat{
+  border-radius: 10px;
+  width: 70%;
+  height: 40%;
+}
+
+
+@keyframes fall {
+  to {
+    transform: translateY(calc(100vh + 10px)); /* Move the fireworks to the bottom of the page */
+  }
+}
+.custom-width {
+  width: 40px; /* Adjust the width as needed */
+}
+

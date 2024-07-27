@@ -1,0 +1,25 @@
+<!-- result.ejs -->
+<!-- Your HTML and Bootstrap styling for the result page -->
+<%- include("partials/header.ejs") %>
+<!-- Include the fireworks script -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1"></script>
+<script src="/fireworks.js"></script>
+
+
+<div class="container mt-4">
+  <% if (locals.isCorrect) { %>
+    <h3 id="celebrationMessage" class="">Congratulations! You got the right answer.</h3>
+    <img src="/images/congrats.jpg" alt="congrats" class="congrat img-fluid mx-auto d-block my-5">
+  <% } else { %>
+    <h3>Oops! Try again.</h3>
+  <% } %>
+</div>
+
+
+    <!-- Button to generate a new random player -->
+    <a href="/generate" class="btn btn-secondary">Home</a>
+
+
+<!-- Your footer content -->
+<%- include("partials/Footer.ejs") %>

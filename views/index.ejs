@@ -1,0 +1,43 @@
+<!-- index.ejs -->
+<%- include("partials/header.ejs") %>
+
+<!-- Display player name image -->
+<div class="container mt-4 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <!-- Display the image of the player -->
+      <img src="images/img-<%= index %>.jpg" class="photo img-fluid mx-auto d-block" alt="player Image">
+    </div>
+  </div>
+</div>
+
+<!-- Display total score -->
+<div class="container mt-2">
+  <h4>Total Score: <%= totalScore %></h4>
+</div>
+
+<!-- Form for user to input letters -->
+<div class="container mt-4">
+  <form action="/check" method="post">
+    <h2>Guess Who is this Player?</h2>
+
+    <!-- Loop through each letter of the player's name -->
+    <div class="form-row mb-5">
+      <% for (let i = 1; i <= name.length; i++) { %>
+        <div class="col custom-width">
+          <label for="inputContent<%= i %>">Letter <%= i %>:</label>
+          <!-- Input field for each letter -->
+          <input type="text" class="form-control " id="inputContent<%= i %>" name="inputContent<%= i %>" maxlength="1">
+        </div>
+      <% } %>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary">Check answer</button>
+    <!-- Button to generate a new random player -->
+    <a href="/generate" class="btn btn-secondary">Generate New Player</a>
+  </form>
+</div>
+
+<!-- Your existing footer content -->
+<%- include("partials/Footer.ejs") %>
